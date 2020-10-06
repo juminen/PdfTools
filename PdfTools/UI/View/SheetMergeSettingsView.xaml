@@ -1,0 +1,150 @@
+﻿<UserControl
+    x:Class="PdfTools.UI.View.SheetMergeSettingsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PdfTools.UI.View"
+    xmlns:pic="clr-namespace:JMI.General.View.WPF.IO.Picker;assembly=JMI.General.View.WPF"
+    mc:Ignorable="d"
+    d:DesignWidth="600">
+    <HeaderedContentControl
+        Template="{StaticResource HeaderControlBorderGridTemplate}">
+        <HeaderedContentControl.Header>
+            <Label
+                Content="Settings" />
+        </HeaderedContentControl.Header>
+        <HeaderedContentControl.Content>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="0,5*" />
+                    <ColumnDefinition
+                        Width="0,5*" />
+                </Grid.ColumnDefinitions>
+                <Grid
+                    Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="Auto" />
+                        <RowDefinition
+                            Height="Auto" />
+                        <RowDefinition
+                            Height="Auto" />
+                        <RowDefinition
+                            Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <GroupBox
+                        Grid.Row="0"
+                        Header="Save created pdf files to">
+                        <StackPanel>
+                            <CheckBox
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                IsChecked="{Binding Path=CurrentDirectorySelected, Mode=TwoWay}"
+                                Margin="2"
+                                Content="Current directory of the first file in sheet set" />
+                            <ContentControl
+                                IsEnabled="{Binding SeriesPathIsEnabled, 
+                                Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                                <pic:DirectoryPicker
+                                    DataContext="{Binding SeriesPathPicker}"
+                                    SelectedPath="{Binding SelectedPath, 
+                                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </ContentControl>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox
+                        Grid.Row="1"
+                        Header="Combination pdf">
+                        <StackPanel>
+                            <CheckBox
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                IsChecked="{Binding Path=CreateCombinationSelected, Mode=TwoWay}"
+                                Margin="2"
+                                Content="Create one pdf from all pdf files" />
+                            <ContentControl
+                                IsEnabled="{Binding CombinationPathIsEnabled, 
+                                Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                                <pic:FilePicker
+                                    DataContext="{Binding CombinationFilePicker}"
+                                    Mode="SaveFile"
+                                    FileFilters="{Binding FileFilters,
+                                    Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                    SelectedPath="{Binding SelectedPath,
+                                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </ContentControl>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox
+                        Grid.Row="2"
+                        Header="Sheet separator">
+                        <TextBox
+                            Text="{Binding Path=SheetSeparator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </GroupBox>
+                    <CheckBox
+                        Grid.Row="3"
+                        VerticalAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        IsChecked="{Binding Path=OpenAfterMerge, Mode=TwoWay}"
+                        Content="Open pdf files after merging" />
+                </Grid>
+                <StackPanel
+                    Grid.Column="1">
+                    <GroupBox
+                        Header="Pdf information (optional)">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                        Width="Auto" />
+                                    <ColumnDefinition
+                                        Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                        Height="Auto" />
+                                    <RowDefinition
+                                        Height="Auto" />
+                                    <RowDefinition
+                                        Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Content="Author" />
+                                <TextBox
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Text="{Binding Path=Author, 
+                                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Label
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Content="Keywords" />
+                                <TextBox
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    Text="{Binding Path=Keywords, 
+                                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <Label
+                                    Grid.Column="0"
+                                    Grid.Row="2"
+                                    Content="Subject" />
+                                <TextBox
+                                    Grid.Column="1"
+                                    Grid.Row="2"
+                                    Text="{Binding Path=Subject, 
+                                    Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </Grid>
+                            <Button
+                                Content="Clear"
+                                Command="{Binding ClearPdfInformationCommand}" />
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </Grid>
+        </HeaderedContentControl.Content>
+    </HeaderedContentControl>
+</UserControl>

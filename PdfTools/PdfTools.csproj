@@ -34,15 +34,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hammer.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JMI.General">
+      <HintPath>..\..\JMI\JMI.General\JMI.General\bin\Release\JMI.General.dll</HintPath>
+    </Reference>
+    <Reference Include="JMI.General.View.WPF">
+      <HintPath>..\..\JMI\JMI.General\JMI.General.View.WPF\bin\Release\JMI.General.View.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="JMI.General.VM">
+      <HintPath>..\..\JMI\JMI.General\JMI.General.VM\bin\Release\JMI.General.VM.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -55,17 +71,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Model\SheetMerge\BaseFile.cs" />
+    <Compile Include="Model\SheetMerge\MergeSettings.cs" />
+    <Compile Include="Model\SheetMerge\PdfMerger.cs" />
+    <Compile Include="Model\SheetMerge\Sheet.cs" />
+    <Compile Include="Model\SheetMerge\SheetMerger.cs" />
+    <Compile Include="Model\SheetMerge\SheetSet.cs" />
+    <Compile Include="Model\SheetMerge\SheetSetBuilder.cs" />
+    <Compile Include="UI\ViewModel\ApplicationMainViewModel.cs" />
+    <Compile Include="UI\ViewModel\SheetMergeFileListItemViewModel.cs" />
+    <Compile Include="UI\ViewModel\SheetMergeFileListViewModel.cs" />
+    <Compile Include="UI\ViewModel\SheetMergeSettingsViewModel.cs" />
+    <Compile Include="UI\ViewModel\SheetMergeViewModel.cs" />
+    <Compile Include="UI\View\ApplicationMainView.xaml.cs">
+      <DependentUpon>ApplicationMainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\SheetMergeFileListView.xaml.cs">
+      <DependentUpon>SheetMergeFileListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\SheetMergeSettingsView.xaml.cs">
+      <DependentUpon>SheetMergeSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\View\SheetMergeView.xaml.cs">
+      <DependentUpon>SheetMergeView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +118,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +126,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\ViewTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\View\ApplicationMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\View\SheetMergeFileListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\View\SheetMergeSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\View\SheetMergeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="hammer.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

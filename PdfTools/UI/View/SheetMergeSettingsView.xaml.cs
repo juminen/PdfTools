@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PdfTools
+namespace PdfTools.UI.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SheetMergeSettingsView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SheetMergeSettingsView : UserControl
     {
-        public MainWindow()
+        public SheetMergeSettingsView()
         {
             InitializeComponent();
         }

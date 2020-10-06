@@ -8,22 +8,210 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PdfTools.Properties
-{
-
-
+namespace PdfTools.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SaveToSameDirectoryAsFirstSheet {
+            get {
+                return ((bool)(this["SaveToSameDirectoryAsFirstSheet"]));
+            }
+            set {
+                this["SaveToSameDirectoryAsFirstSheet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SaveDirectoryPath {
+            get {
+                return ((string)(this["SaveDirectoryPath"]));
+            }
+            set {
+                this["SaveDirectoryPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CreateCombinationFile {
+            get {
+                return ((bool)(this["CreateCombinationFile"]));
+            }
+            set {
+                this["CreateCombinationFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CombinationFilePath {
+            get {
+                return ((string)(this["CombinationFilePath"]));
+            }
+            set {
+                this["CombinationFilePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("_")]
+        public string SheetSeparator {
+            get {
+                return ((string)(this["SheetSeparator"]));
+            }
+            set {
+                this["SheetSeparator"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenAfterMerge {
+            get {
+                return ((bool)(this["OpenAfterMerge"]));
+            }
+            set {
+                this["OpenAfterMerge"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WindowTop {
+            get {
+                return ((double)(this["WindowTop"]));
+            }
+            set {
+                this["WindowTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WindowLeft {
+            get {
+                return ((double)(this["WindowLeft"]));
+            }
+            set {
+                this["WindowLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WindowHeight {
+            get {
+                return ((double)(this["WindowHeight"]));
+            }
+            set {
+                this["WindowHeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double WindowWidht {
+            get {
+                return ((double)(this["WindowWidht"]));
+            }
+            set {
+                this["WindowWidht"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.WindowState WindowState {
+            get {
+                return ((global::System.Windows.WindowState)(this["WindowState"]));
+            }
+            set {
+                this["WindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public double GridRowHeightTop {
+            get {
+                return ((double)(this["GridRowHeightTop"]));
+            }
+            set {
+                this["GridRowHeightTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public double GridRowHeightBottom {
+            get {
+                return ((double)(this["GridRowHeightBottom"]));
+            }
+            set {
+                this["GridRowHeightBottom"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Author {
+            get {
+                return ((string)(this["Author"]));
+            }
+            set {
+                this["Author"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Keywords {
+            get {
+                return ((string)(this["Keywords"]));
+            }
+            set {
+                this["Keywords"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Subject {
+            get {
+                return ((string)(this["Subject"]));
+            }
+            set {
+                this["Subject"] = value;
             }
         }
     }
