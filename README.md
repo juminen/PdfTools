@@ -1,6 +1,6 @@
 # PdfTools
 Small tool for handling pdf files.<br/><br/>
-**Sheet Set Merge** combines files. Tool supposes that pdf files are named in format<br/>
+**Sheet Set Merge** combines files. Tool assumes that pdf files are named in format<br/>
 *[sheet set identifier][sheet separator][sheet identifier][extension]*<br/>
 
 for example:
