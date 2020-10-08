@@ -9,7 +9,7 @@ namespace PdfTools.Model.SheetMerge
         public Sheet(string pathToFile, string sheetSeparator)
             : base(pathToFile)
         {
-            Identifier = new Identifier();
+            Identifier = new StringIdentifier(pathToFile);
             SheetSeparator = sheetSeparator;
             ConstructProperties();
         }
@@ -34,22 +34,6 @@ namespace PdfTools.Model.SheetMerge
         #region methods
         private void ConstructProperties()
         {
-            //string[] splitter = new string[] { SheetSeparator };
-            //string[] split = NameWithoutExtension.Split(splitter, System.StringSplitOptions.RemoveEmptyEntries);
-
-            //if (split.Length == 2)
-            //{
-            //    SheetSet = split[0];
-            //    SheetIdentifier = split[1];
-            //}
-            //else if (split.Length > 2)
-            //{
-            //    for (int i = 0; i < split.Length - 2; i++)
-            //    {
-            //        SheetSet = SheetSet + split[i];
-            //    }
-            //    SheetIdentifier = split[split.Length - 1];
-            //}
             //Can not use String.Split because this method fails 
             //if there are multiple sheet separator strings in file name.
             SheetSet = NameWithoutExtension.Substring(0, NameWithoutExtension.LastIndexOf(SheetSeparator));
