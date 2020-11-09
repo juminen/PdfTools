@@ -29,7 +29,6 @@
                     Grid.Column="1"
                     ItemsSource="{Binding AllItems}"
                     IsSynchronizedWithCurrentItem="True"
-                    IsReadOnly="True"
                     AutoGenerateColumns="False"
                     SelectionMode="Extended"
                     SelectionUnit="FullRow"
@@ -58,27 +57,32 @@
                             Binding="{Binding FileName}"
                             CanUserSort="False"
                             CanUserReorder="False"
+                            IsReadOnly="True"
                             Header="File Name" />
                         <DataGridTextColumn
                             Binding="{Binding SheetSet}"
                             CanUserSort="False"
                             CanUserReorder="False"
+                            IsReadOnly="True"
                             Header="Sheet Set" />
                         <DataGridTextColumn
                             Binding="{Binding SheetSeparator}"
                             CanUserSort="False"
                             CanUserReorder="False"
+                            IsReadOnly="True"
                             Header="Sheet Separator" />
                         <DataGridTextColumn
                             Binding="{Binding Sheet}"
                             CanUserSort="False"
                             CanUserReorder="False"
+                            IsReadOnly="True"
                             Header="Sheet" />
                         <DataGridTextColumn
                             Binding="{Binding FilePath}"
                             Width="*"
                             CanUserSort="False"
                             CanUserReorder="False"
+                            IsReadOnly="True"
                             Header="File Path" />
                     </DataGrid.Columns>
                 </DataGrid>
